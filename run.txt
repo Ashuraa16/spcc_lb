@@ -1,0 +1,15 @@
+In command prompt , go to directory of your files 
+lex program.l       
+yacc program.y
+gcc lex.yy.c y.tab.c -w
+./a.out
+
+After each line press enter
+
+--------------------------------------------------------------------------------------
+
+For lex you have skip that yacc part 
+
+lex program.l 
+gcc lex.yy.c
+./a.out

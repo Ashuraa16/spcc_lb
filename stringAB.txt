@@ -1,0 +1,100 @@
+--------------------------------------------------------------------------------------------------
+
+text = "Python is easy to learn." 
+#Yaha pe aisa statement daalo jo 'ab' se end hota ho
+
+result = text.endswith('to learn')
+# returns False
+print(result)
+
+result = text.endswith('to learn.')
+# returns True
+print(result)
+
+result = text.endswith('Python is easy to learn.')
+# returns True
+print(result)
+
+===============================================------------------------------------------------------------
+
+Alternate Java Program
+
+public class Exercise12 {
+
+    public static void main(String[] args)
+    {
+        String str1 = "Python Exercises";
+        String str2 = "Python Exercise";
+
+        // The String to check the above two Strings to see
+        // if they end with this value (se).
+        String end_str = "se";
+
+        // Check first two Strings end with end_str
+        boolean ends1 = str1.endsWith(end_str);
+        boolean ends2 = str2.endsWith(end_str);
+
+        // Display the results of the endsWith calls.
+        System.out.println("\"" + str1 + "\" ends with " +
+            "\"" + end_str + "\"? " + ends1);
+        System.out.println("\"" + str2 + "\" ends with " +
+            "\"" + end_str + "\"? " + ends2);
+    }
+}
+
+------------------------------------------------------------------------------------------------------
+
+https://www.geeksforgeeks.org/python-check-if-string-ends-with-any-string-in-given-list/
+
+
+# Python3 code to demonstrate
+# Checking for string match suffix
+# using endswith()
+
+# initializing string
+test_string = "GfG is best"
+
+# initializing suffix list
+suff_list = ['best', 'iss', 'good']
+
+# printing original string
+print("The original string : " + str(test_string))
+
+# using endswith()
+# Checking for string match suffix
+res = test_string.endswith(tuple(suff_list))
+
+# print result
+print("Does string end with any suffix list sublist ? : " + str(res))
+
+-------------------------------------------------------------------------------------------------------------
+
+
+#recognize the lanuage of string endiing with ab
+def switcher(state,l):
+    if state == 0:
+        if l == 'a':
+            return 1
+        elif l == 'b':
+            return 0
+    elif state == 1:
+         if l == 'a':
+             return 1
+         elif l == 'b':
+             return 2
+    elif state == 2:
+        if l == 'a' :
+            return 1
+        elif l == 'b':
+            return 0
+
+state = 0
+    
+s = input("Enter the string: ")
+for l in s:
+    state = switcher(state,l)
+print (state)    
+if state == 2:
+    print("String is accepted")
+else :
+    print("String is Rejected")
